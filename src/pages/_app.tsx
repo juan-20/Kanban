@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app'
 import { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
+import Navbar from '../components/Navbar';
 import GlobalStyles from '../styles/GlobalStyles';
 import dark from '../styles/theme/dark';
 import light from '../styles/theme/light';
@@ -17,6 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return(
      <ThemeProvider theme={theme}>
         <GlobalStyles />
+        <Navbar toggleTheme={toggleTheme} />
        <Component {...pageProps} />
      </ThemeProvider>
     )

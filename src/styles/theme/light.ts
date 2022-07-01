@@ -5,11 +5,11 @@ export default {
         primary: '#',
         secondary: '#',
 
-        background: '#',
+        background: '#e1e8ed',
         text: '#',
-        textSecondary: '#',
+        textSecondary: '#195d8e',
         
-        title: '#',
+        title: '#212529',
         titleSecondary: '#',
     },
 }
