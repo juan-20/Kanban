@@ -19,6 +19,15 @@ html, #root, body{
     height: 100vh;
 }
 
+ul{
+        list-style-type: disc;
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 0px
+}
+
 *, button, input {
     font-family: 'Poppins', sans-serif;
 

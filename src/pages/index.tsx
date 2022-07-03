@@ -1,9 +1,10 @@
 import type { NextPage } from 'next'
+import Board from '../components/Board/Index'
 
 const Home: NextPage = () => {
   return (
     <main>
-      <h1>alô</h1>
+      <Board />
     </main>
   )
 }
