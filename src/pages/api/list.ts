@@ -1,25 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-
+import { ResEntity } from '../../types/types';
 
 export interface Data {
   res?: (ResEntity)[] | null;
 }
-export interface ResEntity {
-  title: string;
-  creatable: boolean;
-  cards?: (CardsEntity)[] | null;
-}
-export interface CardsEntity {
-  id: number;
-  content: string;
-  labels?: (LabelsEntity)[] | null;
-}
-export interface LabelsEntity {
-  color: string;
-  text: string;
-}
-
-
 
 export default function handler(
   req: NextApiRequest,
@@ -29,15 +13,31 @@ export default function handler(
      res: [
       { 
         title: '📝  To Do', 
-        creatable: true,
+        color: '#5cc4ff',
         cards: [
           {
             id: 1,
-            content: 'Documentar padões mobile',
-            labels: [{ color: "#fff", text: "Tag 1" }],
+            content: 'Estudar react',
+            labels: [{ color: "#5cc4ff", text: "Tag 1" }],
+          },
+          {
+            id: 2,
+            content: 'Jogar valorant',
+            labels: [{ color: "#5cc4ff", text: "Tag 1" }],
           },
         ],
-      }
+      },
+      { 
+        title: '💻  In Progress', 
+        color: '#945ad1',
+        cards: [
+          {
+            id: 3,
+            content: 'Documentar padões mobile',
+            labels: [{ color: "#945ad1", text: "Tag 1" }],
+          },
+        ],
+      },
     ],
   })
 }

@@ -1,18 +1,20 @@
 import React from 'react';
 import {MdAdd} from 'react-icons/md'
+import { CardsEntity } from '../../types/types';
 import { Container, Color } from './styles';
 
-const Task: React.FC = () => {
+export default function Task( props: {Taskprops: CardsEntity}) {
+  console.log(props)
   return (
     <Container>
         <header>
-          <h3>Erro de design</h3>
+          <h3>{props.Taskprops.content}</h3>
         </header>
-            <Color color="#eee">
-              Task 1
-            </Color>
+            {props.Taskprops.labels?.map(label => <Color 
+            key={label.text} color={label.color}>
+              {label.text}</Color>)}
+            
+             
     </Container>
   );
 }
-
-export default Task;

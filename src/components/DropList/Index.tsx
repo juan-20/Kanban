@@ -1,23 +1,20 @@
 import React from 'react';
 import { MdAdd } from 'react-icons/md';
+import { ResEntity } from '../../types/types';
 import Task from '../Task';
 
 import { Container } from './styles';
 
-const DropList: React.FC = () => {
+export default function DropList(props: {listprops: ResEntity}) {
   return (
-    <Container>
+    <Container color={props.listprops.color}>
         <header>
-          <h1> 📝  To Do </h1>
+          <h1>{props.listprops.title}</h1>
         </header>
 
         <ul>
-          <Task></Task>
-          <Task></Task>
-          <Task></Task>
-          <Task></Task>
-          <Task></Task>
-          <Task></Task>
+          {props.listprops.cards?.map(card => <Task Taskprops={card}
+           key={card.id}  />)}
         </ul>
 
         <button type='button'>
@@ -27,5 +24,3 @@ const DropList: React.FC = () => {
     </Container>
   );
 }
-
-export default DropList;

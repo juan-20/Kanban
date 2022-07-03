@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 import { darken, lighten } from 'polished';
 
-export const Container = styled.div`
-border-top: 15px solid ${darken(0.1, '#5cc4ff')};
-border-radius: 5px;
-    background: #5cc4ff;
+
+export const Container = styled.div`    
+    border-top: 15px solid ${props => darken(0.1, props.color)};
+    border-radius: 5px;
+    background: ${props => props.color};
     width: 315px;
+    
+  margin-right: 30px;
    header{
        padding: 15px;
        >h1{
