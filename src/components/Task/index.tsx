@@ -8,7 +8,9 @@ const Task: React.FC = () => {
         <header>
           <h3>Erro de design</h3>
         </header>
-            <Color color="#333" />
+            <Color color="#eee">
+              Task 1
+            </Color>
     </Container>
   );
 }

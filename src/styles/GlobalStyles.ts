@@ -3,11 +3,12 @@ import { createGlobalStyle } from 'styled-components';
 export default createGlobalStyle`
 
 
-/* @import url('link do google fonts'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap'); */
 
 *{
     margin: 0px;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
   }
   
   main{
@@ -29,7 +30,6 @@ ul{
 }
 
 *, button, input {
-    font-family: 'Poppins', sans-serif;
 
     border: 0;
     outline: 0;
