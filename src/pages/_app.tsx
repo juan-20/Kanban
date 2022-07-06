@@ -1,5 +1,7 @@
 import type { AppProps } from 'next/app'
 import { useState } from 'react';
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 import { ThemeProvider } from 'styled-components';
 import Navbar from '../components/Navbar';
 import GlobalStyles from '../styles/GlobalStyles';
@@ -17,9 +19,11 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return(
      <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <Navbar toggleTheme={toggleTheme} />
-       <Component {...pageProps} />
+      <DndProvider backend={HTML5Backend}>
+          <GlobalStyles />
+          <Navbar toggleTheme={toggleTheme} />
+        <Component {...pageProps} />
+       </DndProvider>
      </ThemeProvider>
     )
 }

@@ -13,8 +13,7 @@ export default function DropList(props: {listprops: ResEntity}) {
         </header>
 
         <ul>
-          {props.listprops.cards?.map(card => <Task Taskprops={card}
-           key={card.id}  />)}
+          {props.listprops.cards?.map((card, index) => <Task index={index} Taskprops={card} key={card.id}  />)}
         </ul>
 
         <button type='button'>

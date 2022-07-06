@@ -38,6 +38,27 @@ export default function handler(
           },
         ],
       },
+      { 
+        title: '🚀  Done', 
+        color: '#59d090',
+        cards: [
+          {
+            id: 4,
+            content: 'Documentar padões mobile',
+            labels: [{ color: "#59d090", text: "Tag 1" }],
+          },
+          {
+            id: 5,
+            content: 'Documentar padões mobile',
+            labels: [{ color: "#59d090", text: "Tag 1" }],
+          },
+          {
+            id: 6,
+            content: 'Documentar padões mobile',
+            labels: [{ color: "#59d090", text: "Tag 1" }],
+          },
+        ],
+      },
     ],
   })
 }

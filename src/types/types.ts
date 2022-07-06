@@ -8,7 +8,7 @@ export interface ResEntity {
     cards?: (CardsEntity)[] | null;
   }
 export interface CardsEntity {
-    id: number;
+    id: number | void;
     content: string;
     labels?: (LabelsEntity)[] | null;
   }

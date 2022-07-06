@@ -1,4 +1,8 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
+
+interface StyledDivProps {
+  isDragging: boolean;
+}
 
 export const Container = styled.div`
   background: #fff;
@@ -18,8 +22,10 @@ line-height: 21px;
 letter-spacing: -0.02em;
 
 color: #212529;
-  }
+}
+
   `;
+
 export const Color = styled.span`
   margin: 0 0 15px 15px;
   width: 50px;
