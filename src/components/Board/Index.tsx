@@ -24,7 +24,8 @@ const Board: React.FC = () => {
   } else {
     return (
     <Container>
-        {lists.map(list => <DropList listprops={list} key={list.title} /> )}
+        {lists.map((list, index: number) => <DropList 
+        index={index} listprops={list} key={list.title} /> )}
     </Container>
   );
 }

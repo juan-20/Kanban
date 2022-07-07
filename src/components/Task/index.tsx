@@ -1,21 +1,24 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useContext } from 'react';
 import { useDrag, useDrop } from 'react-dnd';
 import { CardsEntity } from '../../types/types';
 import { Container, Color } from './styles';
+import moveContext from '../Board/moveContext';
 
 interface StyledDivProps {
   isDragging: boolean;
 }
 
-export default function Task( props: {Taskprops: CardsEntity, index: number}) {
+export default function Task( props: {Taskprops: CardsEntity, index: number, listIndex: number}) {
 
-  console.log(props.index + " alo")
+  // console.log(props.listIndex)
 
   const ref = useRef();
+  const {move} = useContext(moveContext)
 
   const [{isDragging}, dragRef] = useDrag(() => ({
      type: "CARD",
-     item: {index: props.index, id: props.Taskprops.id, content: props.Taskprops.content},
+     item: {index: props.index, listIndex: props.listIndex  
+    },
     collect: monitor => ({
       isDragging: monitor.isDragging
     })
@@ -24,6 +27,11 @@ export default function Task( props: {Taskprops: CardsEntity, index: number}) {
   const [, dropRef] = useDrop(() => ({
     accept: 'CARD',
     hover(item: any, monitor){
+
+      const draggedListIndex = item.listIndex;
+      const targetListIndex = props.listIndex;
+
+
       const draggedIndex = item.index;
       const targetIndex = props.index;
 
@@ -44,6 +52,9 @@ export default function Task( props: {Taskprops: CardsEntity, index: number}) {
       if (draggedIndex > targetIndex && draggedTop > targetCenter) {
         return;
       }
+
+      // index da lista arrastada // index da task arrastada // index da task que vai ficar junto
+      move(draggedListIndex, draggedIndex, targetIndex)
 
 
     }

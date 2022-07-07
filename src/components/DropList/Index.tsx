@@ -5,7 +5,7 @@ import Task from '../Task';
 
 import { Container } from './styles';
 
-export default function DropList(props: {listprops: ResEntity}) {
+export default function DropList(props: {listprops: ResEntity, index: number}) {
   return (
     <Container color={props.listprops.color}>
         <header>
@@ -13,7 +13,8 @@ export default function DropList(props: {listprops: ResEntity}) {
         </header>
 
         <ul>
-          {props.listprops.cards?.map((card, index) => <Task index={index} Taskprops={card} key={card.id}  />)}
+          {props.listprops.cards?.map((card, index) => <Task
+           index={index} Taskprops={card} key={card.id} listIndex={index} />)}
         </ul>
 
         <button type='button'>
