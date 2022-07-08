@@ -11,33 +11,11 @@ import light from '../styles/theme/light';
 import moveTo from 'immer'
 import moveContext from '../components/Board/moveContext';
 import { ListContext, ListContextProvider } from '../contexts/ListContext';
+import { loadLists } from '../services/api';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  
   const [theme, setTheme] = useState(dark);
-  const [list, setList] = useState(pageProps)
 
-  console.log(list + 'hehehe')
-
-
-  
-  function move(fromList: number ,from: string, to: string){
- 
-    console.log(from, to, fromList, list)
-
-    if(list === null)
-    return console.error('ih não entrou');
-    
-
-    setList(moveTo(list, draft => {
-      console.log(list)
-      const dragged = draft[fromList].cards[from]
-
-      draft[fromList].cards.splice(from,1)
-      draft[fromList].cards.splice(to, 0, dragged)
-
-    }))
-  }
 
   const toggleTheme = () => {
     setTheme(theme.title === "dark" ? light : dark)
@@ -45,7 +23,6 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return(
     <ListContextProvider>
-    <moveContext.Provider value={{list, move}}>
      <ThemeProvider theme={theme}>
       <DndProvider backend={HTML5Backend}>
           <GlobalStyles />
@@ -53,19 +30,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
        </DndProvider>
      </ThemeProvider>
-     </moveContext.Provider>
      </ListContextProvider>
     )
-}
-
-
-export async function getServerSideProps() {
-  // Fetch data from external API
-  const data = await axios.get('http://localhost:3000/api/list').then(response => {
-    // setList(response.data.res);
-    return response.data.res
-  })
-  return { props: { data } }
 }
 
 export default MyApp

@@ -5,7 +5,9 @@ interface StyledDivProps {
 }
 
 export const Container = styled.div`
-  background: #fff;
+  >div{
+  background:  ${props => props.theme.colors.background};
+  color:  ${props => props.theme.colors.text};
   border-radius: 5px;
   box-shadow: 0 1px 4px 0 rgba(192,208,230,0.8);
   margin: 20px 10px 20px 10px;
@@ -15,13 +17,36 @@ export const Container = styled.div`
   cursor: grab;
   >h3{
     font-family: 'Avenir Next';
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 21px;
-letter-spacing: -0.02em;
-
-color: #212529;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: -0.02em;
+    color: #212529;
+  }
+  >bottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .delete{
+    display: none;
+  }
+  :hover{
+    .delete{
+      display: inline;
+    background: #f05623;
+    height: 25px;
+    width: 25px;
+    border-radius: 20px;
+    border: 1px #fff solid;
+    position: absolute;
+    margin-top: -70px;
+    margin-left: -15px;
+    cursor: pointer;
+    color: #212529;
+  }
+  }
 }
 
   `;

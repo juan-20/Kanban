@@ -10,6 +10,11 @@ export default createGlobalStyle`
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
   }
+
+  #__next{
+  background: ${props => props.theme.colors.background};;
+  height: 100vh;
+  }
   
   main{
     margin-right: 30px;

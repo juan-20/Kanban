@@ -3,19 +3,24 @@ import { useDrag, useDrop } from 'react-dnd';
 import { CardsEntity } from '../../types/types';
 import { Container, Color } from './styles';
 import moveContext from '../Board/moveContext';
+import {AiOutlineDelete} from 'react-icons/ai';
 
-interface StyledDivProps {
-  isDragging: boolean;
+interface itemProps {
+  listIndex: number;
+  index: number
 }
 
 export default function Task( props: {Taskprops: CardsEntity, index: number, listIndex: number}) {
 
-  // console.log(props.listIndex)
-
+  console.log(props.Taskprops, props.index, props.listIndex)
   const ref = useRef();
   const {move} = useContext(moveContext)
 
-  const [{isDragging}, dragRef] = useDrag(() => ({
+  const [hideTask, setHideTask] = useState(true)
+  console.log(hideTask)
+  const hide = () => setHideTask(false)
+
+  const [{isDragging}, dragRef] = useDrag(({
      type: "CARD",
      item: {index: props.index, listIndex: props.listIndex  
     },
@@ -24,12 +29,12 @@ export default function Task( props: {Taskprops: CardsEntity, index: number, lis
     })
   }))
 
-  const [, dropRef] = useDrop(() => ({
+  const [, dropRef] = useDrop(({
     accept: 'CARD',
-    hover(item: any, monitor){
+    hover(item: itemProps, monitor){
 
       const draggedListIndex = item.listIndex;
-      const targetListIndex = props.listIndex;
+      const targetListIndex = props.index;
 
 
       const draggedIndex = item.index;
@@ -56,20 +61,27 @@ export default function Task( props: {Taskprops: CardsEntity, index: number, lis
       // index da lista arrastada // index da task arrastada // index da task que vai ficar junto
       move(draggedListIndex, draggedIndex, targetIndex)
 
-
+      item.index = targetIndex;
+      item.listIndex = targetListIndex;
     }
   }))
   dragRef(dropRef(ref));
   return (
-    <Container ref={ref}>
-        <header>
+    <Container ref={ref} isDragging={isDragging}>
+      {hideTask ?
+      
+      <div>
+          <header> 
           <h3>{props.Taskprops.content}</h3>
         </header>
-            {props.Taskprops.labels?.map(label => <Color 
-            key={label.text} color={label.color}>
-              {label.text}</Color>)}
-            
-             
+        <div className="bottom">
+             {props.Taskprops.labels?.map(label => <Color 
+             key={label.text} color={label.color}>
+            {label.text}</Color>)}
+             <AiOutlineDelete size={16} className='delete' onClick={hide} />
+        </div>
+      </div>
+        : null }
     </Container>
   );
 }
