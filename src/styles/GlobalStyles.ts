@@ -11,19 +11,16 @@ export default createGlobalStyle`
     font-family: 'Roboto', sans-serif;
   }
 
-  #__next{
+  #__next, html{
   background: ${props => props.theme.colors.background};;
   height: 100vh;
+  width: 100vw;
   }
   
   main{
     margin-right: 30px;
     margin-left: 30px;
   }
-
-html, #root, body{
-    height: 100vh;
-}
 
 ul{
         list-style-type: disc;
@@ -58,6 +55,106 @@ ul{
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
 }
+
+    /* modal style */
+    .react-modal-overlay{
+        background: rgba(0,0,0, 0.5);
+        
+        position: fixed;
+        top: 0%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        display: flex;
+        align-items: center ;
+        justify-content: center;
+    }
+    .react-modal-content{
+        width: 100%;
+        max-width: 576px;
+        background: #f0f2f5;
+        padding: 3rem;
+        position: relative;
+        border-radius: 0.24rem;
+    }
+    .react-modal-close{
+        position: absolute;
+        right: 1.5rem;
+        top: 1.5rem;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+        transition: filter 0.2s;
+
+        &:hover{
+            filter: brightness(0.8);
+        }
+
+    }
+
+        /* inputs */
+        input{
+            width: 90%;
+            padding: 0 1.5rem;
+            height: 4rem;
+            border-radius: 0.25rem;
+
+            border: 1px solid #d7d7d7;
+            background: #e7e9ee;
+
+            font-weight: 400;
+            font-size: 1rem;
+
+            & + input {
+                margin-top: 1rem;
+            }
+        }
+    select{
+            width: 100%;
+            padding: 0 1.5rem;
+            border-radius: 0.25rem;
+            text-overflow: ellipsis;
+            border: 1px solid #d7d7d7;
+            background: #e7e9ee;
+            font-weight: 400;
+            font-size: 1rem;
+            text-align: center;
+
+            & + input {
+                margin-top: 1rem;
+            }
+        }
+
+        select:hover{
+            cursor: pointer;
+        }
+
+        input[type = "color"]{
+            background: transparent;
+            border: none;
+        }
+
+        button[type="submit"]{
+        width: 100%;
+        padding: 0 1.5rem;
+        height: 4rem;
+        background: #33cc95;
+        color: #fff;
+        border-radius: 0.25rem;
+        border: 0;
+        font-size: 1rem;
+        font-weight: 600;
+        margin-top: 3rem;
+
+        transition: filter 0.2s;
+
+        &:hover{
+            filter: brightness(0.9);
+        }
+    }
+
+
 }
 
 `;

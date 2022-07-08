@@ -1,17 +1,18 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { loadLists } from '../../services/api';
-import { ListData } from '../../types/types';
+import { KanbanPageFunctionProps, ListData } from '../../types/types';
 import DropList from '../DropList/Index';
 import moveTo from 'immer'
-import { Container } from './styles';
+import { Container, CreateNewList } from './styles';
 import moveContext from './moveContext';
+import { AiOutlinePlus } from 'react-icons/ai';
 
-
-const Board: React.FC = () => {
+function Board({ onOpenNewTaskModal, onOpenNewListBoxModal }: KanbanPageFunctionProps) {
 
   const data = loadLists()
   const [list, setList] = useState(data.res)
+  
   
   function move(fromList: number ,from: string, to: string){
 
@@ -44,8 +45,15 @@ const Board: React.FC = () => {
     return (
       <moveContext.Provider value={{list, move}}>
     <Container>
+      <div className="DropList">
         {list.map((list, index: number) => <DropList 
+         onOpenNewListBoxModal={onOpenNewListBoxModal}
         index={index} listprops={list} key={list.title} /> )}
+        </div>
+     <CreateNewList onClick={onOpenNewListBoxModal}>
+     <AiOutlinePlus className='plus-icon'/>
+      Criar list box
+      </CreateNewList>
     </Container>
     </moveContext.Provider>
   );

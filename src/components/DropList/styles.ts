@@ -8,6 +8,8 @@ export const Container = styled.div`
     background: ${props => props.color};
     width: 315px;
     
+  margin-bottom: 20px;
+    
   margin-right: 30px;
    header{
        padding: 15px;

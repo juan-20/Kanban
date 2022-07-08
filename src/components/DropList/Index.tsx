@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { MdAdd } from 'react-icons/md';
-import { ResEntity } from '../../types/types';
+import { KanbanPageFunctionProps, ResEntity } from '../../types/types';
 import Task from '../Task';
 
 
 import { Container } from './styles';
 
-export default function DropList(props: {listprops: ResEntity, index: number}) {
+export default function DropList(props: {listprops: ResEntity, index: number, onOpenNewListBoxModal: () => void},) {
   return (
     <Container color={props.listprops.color}>
         <header>
@@ -18,7 +18,7 @@ export default function DropList(props: {listprops: ResEntity, index: number}) {
             
         </ul>
 
-        <button type='button'>
+        <button onClick={props.onOpenNewListBoxModal} type='button'>
             <MdAdd size={24}  />
             <p>Adicionar outro cartão</p>
         </button>

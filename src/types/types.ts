@@ -27,3 +27,9 @@ export interface LabelsEntity {
   export interface ListContextProviderProps {
     children: ReactNode;
   }
+
+ export interface KanbanPageFunctionProps {
+    onOpenNewTaskModal: () => void;
+    onOpenNewListBoxModal: () => void;
+  }
+  

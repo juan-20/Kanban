@@ -15,15 +15,20 @@ export const Container = styled.div`
   flex-grow: 0;
   flex-shrink: 0;
   cursor: grab;
+  >header{
   >h3{
-    font-family: 'Avenir Next';
-    font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 21px;
     letter-spacing: -0.02em;
-    color: #212529;
+    
+    height: 23px;
+    width: 100%;
+    text-overflow: ellipsis;
+    /* overflow: hidden; */
+    white-space: nowrap;
   }
+}
   >bottom{
     display: flex;
     justify-content: center;

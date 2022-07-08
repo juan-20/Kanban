@@ -8,10 +8,6 @@ import Navbar from '../components/Navbar';
 import GlobalStyles from '../styles/GlobalStyles';
 import dark from '../styles/theme/dark';
 import light from '../styles/theme/light';
-import moveTo from 'immer'
-import moveContext from '../components/Board/moveContext';
-import { ListContext, ListContextProvider } from '../contexts/ListContext';
-import { loadLists } from '../services/api';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [theme, setTheme] = useState(dark);
@@ -22,15 +18,13 @@ function MyApp({ Component, pageProps }: AppProps) {
   }
 
   return(
-    <ListContextProvider>
      <ThemeProvider theme={theme}>
       <DndProvider backend={HTML5Backend}>
           <GlobalStyles />
           <Navbar toggleTheme={toggleTheme} />
-        <Component {...pageProps} />
+        <Component  {...pageProps} />
        </DndProvider>
      </ThemeProvider>
-     </ListContextProvider>
     )
 }
 
