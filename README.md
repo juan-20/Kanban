@@ -16,5 +16,11 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 ## Screens
 
+[![dark mode](https://github.com/juan-20/Kanban/blob/main/src/assets/readme/dark-mode.gif?raw=true "dark mode")](https://github.com/juan-20/Kanban/blob/main/src/assets/readme/dark-mode.gif?raw=true "dark mode")
+
+[![validation](https://github.com/juan-20/Kanban/blob/main/src/assets/readme/validation.gif?raw=true "validation")](https://github.com/juan-20/Kanban/blob/main/src/assets/readme/validation.gif?raw=true "validation")
+
+[![modal](https://github.com/juan-20/Kanban/blob/main/src/assets/readme/modallistbox.png?raw=true "modal")](https://github.com/juan-20/Kanban/blob/main/src/assets/readme/modallistbox.png?raw=true "modal")
+
 ## Log
 Uma aplicação usando React dnd para usar o drag and drop. Tive um problema  após mover de coluna pois o elemento não esta atualizando na lista. Comecei usando a API do Next para retornar as informações pois queria que a cada interação ele atualizasse porém acabei optando por um JSON em um services depois. Não consegui fazer a adição de listas e tarefas contudo foquei na experiencia do usuario e no design. Tambem tive uma dificulade que é a covid, durante alguns dias eu não consegui desenvolver com muita dor de cabeça e tossindo muito porém estou orgulhoso do que consegui fazer.
