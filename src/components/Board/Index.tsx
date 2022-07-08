@@ -14,14 +14,12 @@ const Board: React.FC = () => {
   const [list, setList] = useState(data.res)
   
   function move(fromList: number ,from: string, to: string){
-    console.log(from, to, fromList, list)
 
     if(list === null)
     return console.error('ih não entrou');
     
 
     setList(moveTo(list, draft => {
-      console.log(list)
       const dragged = draft[fromList].cards[from]
 
       draft[fromList].cards.splice(from,1)

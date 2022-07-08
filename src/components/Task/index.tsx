@@ -11,13 +11,10 @@ interface itemProps {
 }
 
 export default function Task( props: {Taskprops: CardsEntity, index: number, listIndex: number}) {
-
-  console.log(props.Taskprops, props.index, props.listIndex)
   const ref = useRef();
   const {move} = useContext(moveContext)
 
   const [hideTask, setHideTask] = useState(true)
-  console.log(hideTask)
   const hide = () => setHideTask(false)
 
   const [{isDragging}, dragRef] = useDrag(({

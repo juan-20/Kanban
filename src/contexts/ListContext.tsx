@@ -15,7 +15,6 @@ export function ListContextProvider(props: ListContextProviderProps){
           try {
             const res = await axios.get('http://localhost:3000/api/list').then(response => {
               data = response.data.res;
-              console.log(data)
             })
           } catch (error) {
             console.error('CANNOT LOAD API');
