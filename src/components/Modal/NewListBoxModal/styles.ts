@@ -25,13 +25,6 @@ export const AlertText = styled.p<TextProps>`
     color: ${(props) => props.isActive
         ? '#333' : 'red'
     };
-
-    
-    display: ${(props) => props.isActive
-        ? 'none' : 'inline'
-    }
-    
-
     `;
 
 interface ColorProps {

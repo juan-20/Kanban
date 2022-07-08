@@ -20,7 +20,7 @@ function NewListBoxModal({ isOpen, onRequestClose }: NewListBoxProps) {
   const [handleColor, setHandleColor] = useState(false);
 
   function createBoxModal(event: FormEvent) {
-    console.log({ title, color })
+    // console.log({ title, color })
 
     // const getData = async () => {
     //   const res = await axios.get('https://localhost:3000/api/listBox')
@@ -64,7 +64,7 @@ function NewListBoxModal({ isOpen, onRequestClose }: NewListBoxProps) {
         <AlertText
           isActive={type === false}
           activeColor="gray"
-        >Digite a cor:</AlertText>
+        >Digite o titulo:</AlertText>
 
         <input type="text" placeholder="Titulo"
           value={title}
@@ -74,7 +74,7 @@ function NewListBoxModal({ isOpen, onRequestClose }: NewListBoxProps) {
         <AlertColor
           isActive={handleColor === false}
           activeColor="gray"
-        >Digite o título:</AlertColor>
+        >Digite a cor:</AlertColor>
 
         <input type="color" placeholder="Titulo"
           value={color}

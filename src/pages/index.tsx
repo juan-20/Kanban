@@ -15,13 +15,11 @@ const Home: NextPage = () => {
 
   function handleOpenNewTaskModal() {
     setIsNewTaskModalOpen(true);
-    console.log('abriu');
   }
 
 
   function handleOpenNewListBoxModal() {
     setIsNewListBoxModalOpen(true);
-    console.log('abriu o do list box');
   }
 
   function handleCloseNewListBoxModal() {

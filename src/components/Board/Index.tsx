@@ -22,9 +22,12 @@ function Board({ onOpenNewTaskModal, onOpenNewListBoxModal }: KanbanPageFunction
 
     setList(moveTo(list, draft => {
       const dragged = draft[fromList].cards[from]
-
+      debugger
+      
       draft[fromList].cards.splice(from,1)
       draft[fromList].cards.splice(to, 0, dragged)
+      // draft esta retornando null, não esta colocando o novo card dentro
+      console.log(draft)
 
     }))
   }

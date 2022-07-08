@@ -11,9 +11,9 @@ interface itemProps {
 }
 
 export default function Task( props: {Taskprops: CardsEntity, index: number, listIndex: number}) {
+
   const ref = useRef();
   const {move} = useContext(moveContext)
-
   const [hideTask, setHideTask] = useState(true)
   const hide = () => setHideTask(false)
 
@@ -68,6 +68,8 @@ export default function Task( props: {Taskprops: CardsEntity, index: number, lis
       {hideTask ?
       
       <div>
+            {props.Taskprops === undefined ? 'Problema para pegar a informação do card após o relocar' :
+          <>
           <header> 
           <h3>{props.Taskprops.content}</h3>
         </header>
@@ -77,8 +79,9 @@ export default function Task( props: {Taskprops: CardsEntity, index: number, lis
             {label.text}</Color>)}
              <AiOutlineDelete size={16} className='delete' onClick={hide} />
         </div>
+        </>}
       </div>
-        : null }
+        : null } 
     </Container>
   );
 }
