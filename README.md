@@ -2,8 +2,9 @@
 
 - Drag and Drop
 - Tema noturno
--  Responsivo
 - Excluir tarefas
+- Excluir Lista
+- Adicionar Tag
 
 ## Getting Started
 
@@ -12,15 +13,25 @@ First, run the development server:
 ```bash
 git clone https://github.com/juan-20/Kanban.git
 npm run dev
+yarn run dev
 ```
+
+to run e2e test:
+```bash
+npm test
+or
+yarn test
+```
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 ## Screens
 
-[![dark mode](https://github.com/juan-20/Kanban/blob/main/src/assets/readme/dark-mode.gif?raw=true "dark mode")](https://github.com/juan-20/Kanban/blob/main/src/assets/readme/dark-mode.gif?raw=true "dark mode")
+[![theme](https://github.com/juan-20/Kanban/blob/main/src/assets/readme/theme.gif?raw=true "theme")](https://github.com/juan-20/Kanban/blob/main/src/assets/readme/theme.gif?raw=true "theme")
 
-[![validation](https://github.com/juan-20/Kanban/blob/main/src/assets/readme/validation.gif?raw=true "validation")](https://github.com/juan-20/Kanban/blob/main/src/assets/readme/validation.gif?raw=true "validation")
+[![Drag and drop](https://github.com/juan-20/Kanban/blob/main/src/assets/readme/dragndrop.gif?raw=true "Drag and drop")](https://github.com/juan-20/Kanban/blob/main/src/assets/readme/dragndrop.gif?raw=true "Drag and drop")
 
-[![modal](https://github.com/juan-20/Kanban/blob/main/src/assets/readme/modallistbox.png?raw=true "modal")](https://github.com/juan-20/Kanban/blob/main/src/assets/readme/modallistbox.png?raw=true "modal")
+[![add](https://github.com/juan-20/Kanban/blob/main/src/assets/readme/addListAndTask.gif?raw=true "add")](https://github.com/juan-20/Kanban/blob/main/src/assets/readme/addListAndTask.gif?raw=true "add")
 
-## Log
-Uma aplicação usando React dnd para usar o drag and drop. Tive um problema  após mover de coluna pois o elemento não esta atualizando na lista. Comecei usando a API do Next para retornar as informações pois queria que a cada interação ele atualizasse porém acabei optando por um JSON em um services depois. Não consegui fazer a adição de listas e tarefas contudo foquei na experiencia do usuario e no design. Tambem tive uma dificulade que é a covid, durante alguns dias eu não consegui desenvolver com muita dor de cabeça e tossindo muito porém estou orgulhoso do que consegui fazer.
+[![edit task](https://github.com/juan-20/Kanban/blob/main/src/assets/readme/edit%20task.gif?raw=true "edit task")](https://github.com/juan-20/Kanban/blob/main/src/assets/readme/edit%20task.gif?raw=true "edit task")
+
+[![test](https://github.com/juan-20/Kanban/blob/main/src/assets/readme/e2e.gif?raw=true "test")](https://github.com/juan-20/Kanban/blob/main/src/assets/readme/e2e.gif?raw=true "test")
