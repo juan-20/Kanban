@@ -1,8 +1,6 @@
 import { AppProps } from "next/app";
 import { useState } from "react";
 import { ThemeProvider } from "styled-components";
-import Board from "../Components/Board/Board";
-import Navbar from "../Components/Navbar";
 import GlobalStyles from "../styles/GlobalStyles";
 import dark from "../styles/theme/dark";
 import light from "../styles/theme/light";

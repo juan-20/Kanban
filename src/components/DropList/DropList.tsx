@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { BiTrashAlt } from "react-icons/bi";
 
 import Card from "../Card/Card";

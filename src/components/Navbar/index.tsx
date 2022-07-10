@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import Switch from 'react-switch'
-import { BsDot, BsFillMoonFill, BsSun, BsSunFill } from "react-icons/bs";
+import { BsFillMoonFill, BsSunFill } from "react-icons/bs";
 import { Nav } from './styles';
 
 interface props {
