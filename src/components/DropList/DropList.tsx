@@ -34,7 +34,7 @@ function DropList(props: BoardProps) {
           <h1 className="board-header-title">
             {board?.title}
           </h1>
-          <div className="trash">
+          <div id={board.title + "trash"} className="trash">
             <BiTrashAlt size={16} onClick={() => removeBoard(board?.id)} />
             </div>
         </header>
@@ -50,7 +50,7 @@ function DropList(props: BoardProps) {
               updateCard={updateCard}
             />
           ))}
-           <CreateNewList>
+           <CreateNewList id={board.title + "CreateTask"}>
           <AiOutlinePlus className='plus-icon'/>
           <CustomInput
             text="Adicionar Tarefa"

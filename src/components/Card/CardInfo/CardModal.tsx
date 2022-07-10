@@ -56,8 +56,8 @@ function CardModal(props: CardModalProps) {
   return (
     <Modal onClose={onClose}>
       <Container>
-          <header>
-          <AiFillEdit></AiFillEdit>
+          <header id={cardValues.title + 'ModalTitle'}>
+          <AiFillEdit id="teste"></AiFillEdit>
           <CustomInput
             defaultValue={cardValues.title}
             text={cardValues.title}
@@ -77,6 +77,7 @@ function CardModal(props: CardModalProps) {
           <ul>
             {colorsList.map((item, index) => (
               <li
+                id={index+ 'Color'}
                 key={index}
                 style={{ backgroundColor: item }}
                 className={selectedColor === item ? "li-active" : ""}
