@@ -1,6 +1,6 @@
 import React from "react";
-import Board from "../Components/Board/Board";
-import Navbar from "../Components/Navbar";
+import Board from "../components/Board/Board";
+import Navbar from "../components/Navbar";
 
 interface props {
   toggleTheme(): void;
