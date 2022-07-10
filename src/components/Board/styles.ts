@@ -4,33 +4,22 @@ export const Container = styled.div`
   height: 100vh - 113px;
   display: flex;
   flex-direction: row;
+  margin-right: 30px;
+  margin-left: 30px;
 
-  @media only screen and (max-width: 1225px) {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
+  background: ${props => props.theme.colors.background};
   
-  .DropList{
+  .drop-list{
+    gap: 20px;
     display: flex;
-  @media only screen and (max-width: 880px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    
-    justify-content: center;
-  }
-  @media only screen and (max-width: 650px) {
-    display: grid;
-    grid-template-columns: 1fr;
-    
-    justify-content: center;
-  }
+  
   }
   `;
 
   export const CreateNewList = styled.div`
     background: #cbd1d6;
     height: 55px;
-    width: 315px;
+    min-width: 315px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
