@@ -1,4 +1,4 @@
-
+export {};
 describe('Criar uma lista', () => {
   it('acessar', () => {
     // cy.visit('https://kanban-juan-20.vercel.app/')
