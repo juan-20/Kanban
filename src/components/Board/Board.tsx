@@ -157,7 +157,7 @@ function Board() {
               editClass="app-boards-add-board-edit"
               placeholder="Enter Board Name"
               text="Adicionar outra lista"
-              buttonText="Adicionar outra lista"
+              buttonText="Adicionar Lista"
               onSubmit={addboardHandler}
             />
           </CreateNewList>

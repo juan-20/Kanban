@@ -9,9 +9,27 @@ export const Container = styled.div`
 
   background: ${props => props.theme.colors.background};
   
+  @media only screen and (max-width: 425px) {
+    display: flex;
+    flex-direction: column;
+  }
+  @media only screen and (max-width: 768px) {
+    display: flex;
+  }
+
   .drop-list{
     gap: 20px;
     display: flex;
+   
+    @media only screen and (max-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr ;
+  }
+
+  @media only screen and (max-width: 425px) {
+    display: flex;
+    flex-direction: column;
+  }
   
   }
   `;

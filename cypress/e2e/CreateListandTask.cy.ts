@@ -11,7 +11,7 @@ describe('Criar uma lista', () => {
     cy.contains('Adicionar outra lista').click();
     cy.get('.custom-input > form > input').click();
     cy.get('.custom-input > form > input').type('Nova-lista');
-    cy.contains('Adicionar outra lista').click();
+    cy.contains('Adicionar Lista').click();
   })
   
   
